@@ -29,13 +29,13 @@
       "Properties":
       {
         "Evas.Object.visibility":[true],
-        "Elm_Win.constructor":[null, "ELM_WIN_BASIC"],
         "Elm_Win.autodel":[true],
         "Elm_Win.modal":[false],
         "Elm_Win.title":["File Select"],
-        "Evas.Object.size":[542, 409]
+        "Evas.Object.size":[542, 409],
+        "Elm_Win.constructor":[null, "ELM_WIN_DIALOG_BASIC"]
       },
-      "Contains":["win_main_bg"]
+      "Contains":["win_main_bg", "vbox"]
     },
     "win_main_bg":
     {
@@ -64,11 +64,12 @@
       {
         "Evas.Object.visibility":[true],
         "Evas.Object.size_hint_weight":[1, 1],
-        "Evas.Object.size":[313, 76],
         "Evas.Object.position":[0, 0],
-        "Evas.Object.size_hint_align":[-1, -1],
         "Elm_Box.horizontal":[true],
-        "Evas.Object.size_hint_aspect":["EVAS_ASPECT_CONTROL_NONE", 0, 0]
+        "Evas.Object.size_hint_aspect":["EVAS_ASPECT_CONTROL_NONE", 0, 0],
+        "Evas.Object.size_hint_min":[0, 0],
+        "Evas.Object.size_hint_align":[-1, -1],
+        "Evas.Object.size":[0, 0]
       },
       "Contains":["box_bookmarks", "box_files"]
     },
@@ -84,7 +85,8 @@
         "Evas.Object.size_hint_weight":[1, 1],
         "Evas.Object.visibility":[true],
         "Evas.Object.size_hint_align":[-1, -1],
-        "Evas.Object.size_hint_aspect":["EVAS_ASPECT_CONTROL_BOTH", 0, 0]
+        "Evas.Object.size_hint_aspect":["EVAS_ASPECT_CONTROL_BOTH", 0, 0],
+        "Evas.Object.size":[0, 0]
       },
       "Contains":["btn_add_bookmark", "gen_bookmarks"]
     },
@@ -132,11 +134,11 @@
         "Evas.Object.size_hint_weight":[1, 1],
         "Evas.Object.visibility":[true],
         "Elm_Widget.part_text":[null, "Add Bookmark"],
-        "Evas.Object.size_hint_min":[1, 27],
-        "Evas.Object.size_hint_align":[-1, 0.50],
-        "Evas.Object.size":[1, 1],
         "Evas.Object.position":[0, 0],
-        "Evas.Object.size_hint_aspect":["EVAS_ASPECT_CONTROL_NONE", 0, 0]
+        "Evas.Object.size_hint_aspect":["EVAS_ASPECT_CONTROL_NONE", 0, 0],
+        "Evas.Object.size":[0, 0],
+        "Evas.Object.size_hint_min":[0, 28],
+        "Evas.Object.size_hint_align":[-1, 0]
       }
     },
     "gen_bookmarks":
@@ -150,8 +152,8 @@
       {
         "Evas.Object.size_hint_weight":[1, 1],
         "Evas.Object.visibility":[true],
-        "Evas.Object.size":[70, 60],
-        "Evas.Object.position":[323, 296]
+        "Evas.Object.size":[3, 3],
+        "Evas.Object.position":[27, 82]
       }
     },
     "btn_filter":
@@ -168,8 +170,8 @@
         "Elm_Widget.part_text":[null, "Filter"],
         "Evas.Object.position":[0, 0],
         "Evas.Object.size":[1, 1],
-        "Evas.Object.size_hint_align":[-1, 0.50],
-        "Evas.Object.size_hint_min":[0, 27]
+        "Evas.Object.size_hint_min":[0, 27],
+        "Evas.Object.size_hint_align":[-1, 0]
       }
     },
     "gen_files":
@@ -233,7 +235,8 @@
         "Evas.Object.visibility":[true],
         "Elm_Widget.part_text":[null, "Entry"],
         "Evas.Object.size":[60, 30],
-        "Evas.Object.position":[241, 31]
+        "Evas.Object.position":[241, 31],
+        "Evas.Object.size_hint_align":[-1, 0]
       }
     }
   }
