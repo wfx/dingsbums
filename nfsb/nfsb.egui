@@ -14,7 +14,8 @@
       "icon_open":"eicons/e-symbolic/actions/16/icon_document_open.png",
       "icon_go_previous":"eicons/e-symbolic/actions/16/icon_go_previous.png",
       "icon_go_next":"eicons/e-symbolic/actions/16/icon_go_next.png",
-      "icon_folder":"eicons/e-symbolic/places/16/icon_folder.png"
+      "icon_folder":"eicons/e-symbolic/places/16/icon_folder.png",
+      "icon_favorite":"/home/wfx/Projects/eicons/e-symbolic/emblems/16/icon_emblem_favorite.png"
     }
   },
   "Widgets":
@@ -69,7 +70,8 @@
         "Evas.Object.size":[0, 0],
         "Evas.Object.size_hint_aspect":["EVAS_ASPECT_CONTROL_NONE", 0, 0],
         "Evas.Object.size_hint_align":[-1, -1],
-        "Evas.Object.size_hint_weight":[1, 20]
+        "Evas.Object.size_hint_weight":[1, 20],
+        "Elm_Box.padding":[4, 0]
       },
       "Contains":["box_bookmarks", "box_files"]
     },
@@ -88,7 +90,7 @@
         "Evas.Object.size_hint_align":[-1, -1],
         "Evas.Object.size_hint_weight":[0.50, 1]
       },
-      "Contains":["elm_box3", "elm_box5"]
+      "Contains":["elm_box3", "elm_box5", "elm_box6"]
     },
     "box_files":
     {
@@ -118,7 +120,8 @@
         "Evas.Object.visibility":[true],
         "Evas.Object.size_hint_align":[-1, -1],
         "Evas.Object.size":[198, 124],
-        "Evas.Object.position":[-19, -15]
+        "Evas.Object.position":[-19, -15],
+        "Elm_Box.padding":[4, 0]
       },
       "Contains":["hbox"]
     },
@@ -126,19 +129,20 @@
     {
       "Desc":
       {
-        "parent":"elm_box3",
+        "parent":"elm_box6",
         "class":"Elm_Button"
       },
       "Properties":
       {
         "Evas.Object.size_hint_weight":[1, 1],
         "Evas.Object.visibility":[true],
-        "Elm_Widget.part_text":[null, "Add Bookmark"],
         "Evas.Object.position":[0, 0],
         "Evas.Object.size_hint_aspect":["EVAS_ASPECT_CONTROL_NONE", 0, 0],
         "Evas.Object.size":[0, 0],
         "Evas.Object.size_hint_min":[0, 28],
-        "Evas.Object.size_hint_align":[-1, 0]
+        "Elm_Widget.part_text":[null, "+"],
+        "Evas.Object.size_hint_align":[-1, 0.50],
+        "Elm_Widget.disabled":[true]
       }
     },
     "bookmarks_gen":
@@ -205,7 +209,9 @@
         "Evas.Object.position":[262, 135],
         "Elm_Box.horizontal":[true],
         "Evas.Object.size_hint_align":[-1, 0],
-        "Evas.Object.size_hint_weight":[1, 0]
+        "Evas.Object.size_hint_weight":[1, 0],
+        "Elm_Box.padding":[2, 0],
+        "Evas.Object.size_hint_min":[0, 28]
       },
       "Contains":["view_filter_btn", "search_file_entry"]
     },
@@ -260,8 +266,9 @@
         "Evas.Object.size":[0, 0],
         "Elm_Box.horizontal":[true],
         "Evas.Object.size_hint_align":[-1, 1],
-        "Elm_Box.padding":[6, 6],
-        "Evas.Object.size_hint_weight":[1, 0]
+        "Evas.Object.size_hint_weight":[1, 0],
+        "Evas.Object.size_hint_min":[102, 28],
+        "Elm_Box.padding":[0, 0]
       },
       "Contains":["select_btn", "elm_button2"]
     },
@@ -277,7 +284,9 @@
         "Evas.Object.size_hint_weight":[1, 1],
         "Evas.Object.visibility":[true],
         "Evas.Object.size":[0, 0],
-        "Elm_Widget.part_text":[null, "Select"]
+        "Elm_Widget.part_text":[null, "Select"],
+        "Elm_Widget.disabled":[true],
+        "Evas.Object.size_hint_align":[-1, 0.50]
       }
     },
     "elm_button2":
@@ -292,7 +301,8 @@
         "Evas.Object.size_hint_weight":[1, 1],
         "Evas.Object.visibility":[true],
         "Evas.Object.size":[0, 0],
-        "Elm_Widget.part_text":[null, "Cancel"]
+        "Elm_Widget.part_text":[null, "Cancel"],
+        "Evas.Object.size_hint_align":[-1, 0.50]
       }
     },
     "elm_box3":
@@ -306,9 +316,11 @@
       {
         "Evas.Object.visibility":[true],
         "Evas.Object.size_hint_align":[-1, 0],
-        "Evas.Object.size_hint_weight":[1, 0]
+        "Evas.Object.size_hint_weight":[1, 0],
+        "Evas.Object.size":[0, 0],
+        "Evas.Object.size_hint_min":[0, 28]
       },
-      "Contains":["add_bookmark_btn"]
+      "Contains":["elm_label1"]
     },
     "elm_box5":
     {
@@ -327,6 +339,57 @@
         "Evas.Object.size_hint_align":[-1, -1]
       },
       "Contains":["bookmarks_gen"]
+    },
+    "elm_box6":
+    {
+      "Desc":
+      {
+        "parent":"box_bookmarks",
+        "class":"Elm_Box"
+      },
+      "Properties":
+      {
+        "Evas.Object.visibility":[true],
+        "Evas.Object.size_hint_align":[-1, -1],
+        "Evas.Object.size_hint_weight":[1, 0],
+        "Elm_Box.horizontal":[true]
+      },
+      "Contains":["add_bookmark_btn", "elm_button1"]
+    },
+    "elm_label1":
+    {
+      "Desc":
+      {
+        "parent":"elm_box3",
+        "class":"Elm_Label"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Evas.Object.size_hint_align":[-1, -1],
+        "Evas.Object.size":[0, 0],
+        "Elm_Widget.part_text":[null, "Places"],
+        "Elm_Widget.disabled":[false],
+        "Evas.Object.size_hint_min":[0, 28]
+      }
+    },
+    "elm_button1":
+    {
+      "Desc":
+      {
+        "parent":"elm_box6",
+        "class":"Elm_Button"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Evas.Object.size":[73, 30],
+        "Elm_Widget.part_text":[null, "-"],
+        "Evas.Object.size_hint_align":[-1, 0.50],
+        "Elm_Widget.disabled":[true]
+      }
     }
   }
  }
