@@ -36,6 +36,10 @@
         "Elm_Win.constructor":[null, "ELM_WIN_DIALOG_BASIC"],
         "Evas.Object.size":[400, 300]
       },
+      "Callbacks":
+      {
+        "delete,request":["Create", "win_main", null]
+      },
       "Contains":["win_main_bg", "vbox"]
     },
     "win_main_bg":

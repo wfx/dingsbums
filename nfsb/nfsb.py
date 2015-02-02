@@ -30,18 +30,11 @@ class MyGui(ErigoGui):
     def elm_button2_clicked_cb(self, btn):
         print('USER CB INVOKED', btn)
 
-def erigo_clicked(obj):
-
-    # Test from file
-    egui = MyGui(json_file, verbose=True)
-
-    if obj is None:
-        egui.win_main.callback_delete_request_add(lambda o: elementary.exit())
-
 if __name__ == '__main__':
     elementary.init()
 
-    erigo_clicked(None)
+    #erigo_clicked(None)
+    myapp = MyGui()
 
     elementary.run()
     elementary.shutdown()
