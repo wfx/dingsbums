@@ -13,28 +13,28 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+#
+# API: https://lazka.github.io/pgi-docs/#LightDM-1
 #
 
 import os
+import sys
 
 from efl import elementary
 from efl.utils.erigo import ErigoGui
 
-json_file = "nfsb.egui"
+prj_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nfsb")
+json_file = os.path.join(prj_path, "nfsb.egui")
 
-class MyGui(ErigoGui):
+class NFSB(ErigoGui):
     def __init__(self, *args, **kargs):
         ErigoGui.__init__(self, *args, **kargs)
-        # Here you can put your init stuff, if needed
+        self.elm_win1.callback_delete_request_add(lambda o: elementary.exit())
 
-    def elm_button2_clicked_cb(self, btn):
-        print('USER CB INVOKED', btn)
 
 if __name__ == '__main__':
     elementary.init()
-
-    #erigo_clicked(None)
-    myapp = MyGui()
-
+    nfsb = NFSB()
     elementary.run()
     elementary.shutdown()

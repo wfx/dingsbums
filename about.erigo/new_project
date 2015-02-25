@@ -1,0 +1,232 @@
+{
+  "JSON_Version":"1",
+  "Settings":
+  {
+    "project":"New Project",
+    "start_points":["elm_win1"]
+  },
+  "Widgets":
+  {
+    "elm_win1":
+    {
+      "Desc":
+      {
+        "parent":null,
+        "class":"Elm_Win"
+      },
+      "Properties":
+      {
+        "Elm_Win.title":["elm_win1"],
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Evas.Object.size":[470, 336],
+        "Elm_Win.focus_highlight_enabled":[true]
+      },
+      "Methods":
+      {
+        "Elm_Win.constructor":[null, "ELM_WIN_BASIC"]
+      },
+      "Contains":["elm_bg1"]
+    },
+    "elm_bg1":
+    {
+      "Desc":
+      {
+        "parent":"elm_win1",
+        "class":"Elm_Bg"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Evas.Object.position":[197, 114]
+      }
+    },
+    "elm_box1":
+    {
+      "Desc":
+      {
+        "parent":"elm_win1",
+        "class":"Elm_Box"
+      },
+      "Properties":
+      {
+        "Evas.Object.visibility":[true],
+        "Evas.Object.size_hint_align":[0.50, 0.50],
+        "Evas.Object.size":[461, 311],
+        "Evas.Object.position":[0, 0],
+        "Elm_Box.horizontal":[true],
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.size_hint_aspect":["EVAS_ASPECT_CONTROL_NONE", 0, 0]
+      },
+      "Contains":["elm_box2", "elm_box3"]
+    },
+    "elm_box2":
+    {
+      "Desc":
+      {
+        "parent":"elm_box1",
+        "class":"Elm_Box"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Evas.Object.size_hint_align":[0, -1],
+        "Evas.Object.position":[0, 0],
+        "Elm_Box.padding":[4, 4],
+        "Evas.Object.size":[0, 0],
+        "Evas.Object.size_hint_min":[100, 0]
+      },
+      "Contains":["elm_icon1", "elm_label1", "elm_separator1", "elm_button1", "elm_button2", "elm_button3", "elm_button4"]
+    },
+    "elm_box3":
+    {
+      "Desc":
+      {
+        "parent":"elm_box1",
+        "class":"Elm_Box"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Evas.Object.size_hint_align":[-1, -1],
+        "Evas.Object.position":[230, 317]
+      },
+      "Contains":["elm_entry1"]
+    },
+    "elm_icon1":
+    {
+      "Desc":
+      {
+        "parent":"elm_box2",
+        "class":"Elm_Icon"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Evas.Object.size":[40, 40],
+        "Evas.Object.size":[40, 40],
+        "Elm_Image.resizable":[false, false],
+        "Evas.Object.size_hint_align":[0.50, 0.50],
+        "Evas.Object.position":[0, 0]
+      }
+    },
+    "elm_separator1":
+    {
+      "Desc":
+      {
+        "parent":"elm_box2",
+        "class":"Elm_Separator"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Evas.Object.position":[245, 213],
+        "Elm_Separator.horizontal":[true]
+      }
+    },
+    "elm_button1":
+    {
+      "Desc":
+      {
+        "parent":"elm_box2",
+        "class":"Elm_Button"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Elm_Widget.part_text":[null, "Button"],
+        "Evas.Object.size":[73, 30],
+        "Evas.Object.position":[198, 207],
+        "Evas.Object.size_hint_align":[-1, 0.50]
+      }
+    },
+    "elm_button2":
+    {
+      "Desc":
+      {
+        "parent":"elm_box2",
+        "class":"Elm_Button"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Elm_Widget.part_text":[null, "Button"],
+        "Evas.Object.size":[73, 30],
+        "Evas.Object.position":[200, 266],
+        "Evas.Object.size_hint_align":[-1, 0.50]
+      }
+    },
+    "elm_button3":
+    {
+      "Desc":
+      {
+        "parent":"elm_box2",
+        "class":"Elm_Button"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Elm_Widget.part_text":[null, "Button"],
+        "Evas.Object.size":[73, 30],
+        "Evas.Object.position":[100, 143],
+        "Evas.Object.size_hint_align":[-1, 0.50]
+      }
+    },
+    "elm_button4":
+    {
+      "Desc":
+      {
+        "parent":"elm_box2",
+        "class":"Elm_Button"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Elm_Widget.part_text":[null, "Button"],
+        "Evas.Object.size":[73, 30],
+        "Evas.Object.position":[190, 226],
+        "Evas.Object.size_hint_align":[-1, 0.50]
+      }
+    },
+    "elm_entry1":
+    {
+      "Desc":
+      {
+        "parent":"elm_box3",
+        "class":"Elm_Entry"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Elm_Widget.part_text":[null, "Entry"],
+        "Evas.Object.size":[60, 30],
+        "Evas.Object.size_hint_align":[-1, -1]
+      }
+    },
+    "elm_label1":
+    {
+      "Desc":
+      {
+        "parent":"elm_box2",
+        "class":"Elm_Label"
+      },
+      "Properties":
+      {
+        "Evas.Object.size_hint_weight":[1, 1],
+        "Evas.Object.visibility":[true],
+        "Elm_Widget.part_text":[null, "Label"],
+        "Evas.Object.size":[60, 30]
+      }
+    }
+  }
+ }

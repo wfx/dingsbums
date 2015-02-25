@@ -15,7 +15,8 @@
       "icon_go_previous":"eicons/e-symbolic/actions/16/icon_go_previous.png",
       "icon_go_next":"eicons/e-symbolic/actions/16/icon_go_next.png",
       "icon_folder":"eicons/e-symbolic/places/16/icon_folder.png",
-      "icon_favorite":"/home/wfx/Projects/eicons/e-symbolic/emblems/16/icon_emblem_favorite.png"
+      "icon_favorite":"/home/wfx/Projects/eicons/e-symbolic/emblems/16/icon_emblem_favorite.png",
+      "icons_find":"/home/wfx/Projects/eicons/e-symbolic/actions/16/icon_edit_find.png"
     }
   },
   "Widgets":
@@ -254,7 +255,8 @@
         "Elm_Entry.single_line":[true],
         "Elm_Entry.scrollable":[true],
         "Evas.Object.size_hint_align":[-1, 0.50],
-        "Elm_Widget.part_text":[null, "Search file."]
+        "Elm_Widget.part_text":[null, "Search file."],
+        "Efl.File.file":["icon_folder", null]
       }
     },
     "elm_box4":
