@@ -1,3 +1,4 @@
+# Based on Blued and arch-glow
 background.sprite = Sprite();
 anim.sprite = Sprite();
 txtMessage.sprite = Sprite();
