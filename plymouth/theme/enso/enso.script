@@ -1,0 +1,80 @@
+background.sprite = Sprite();
+anim.sprite = Sprite();
+txtMessage.sprite = Sprite();
+previousIntProgress = 0;
+
+fun showBackground() {
+	background.ratio = Window.GetWidth() / Window.GetHeight();
+	background.tmpImage = Image("bg.png");
+	background.image = background.tmpImage.Scale(Window.GetWidth(), Window.GetHeight());
+	background.sprite.SetImage(background.image);
+}
+
+fun setupAnimation(mode) {
+	anim.x = Window.GetWidth() / 2 - 72;
+	anim.y = Window.GetHeight() / 2 - 72;
+	anim.sprite.SetPosition(anim.x, anim.y, 1);
+	if (mode == "boot") {
+		anim.tmpImage = Image("progress-0.png");
+	}
+	else {
+		anim.tmpImage = Image("progress-0.png");
+	}
+	anim.sprite.SetImage(anim.tmpImage);
+}
+
+fun updateBootAnimation(duration, progress) {
+	intProgress = Math.Int(progress*100/2);
+	if (intProgress != previousIntProgress) {
+		anim.tmpImage = Image("progress-"+intProgress+".png");
+		anim.sprite.SetImage(anim.tmpImage);
+		previousIntProgress = intProgress;
+	}
+}
+
+fun updateShutdownAnimation(duration, progress) {
+	intProgress = Math.Int(progress*1000);
+	if (intProgress != previousIntProgress) {
+		if (intProgress < 51) {
+			anim.tmpImage = Image("progress-"+intProgress+".png");
+			anim.sprite.SetImage(anim.tmpImage);
+		}
+		if (intProgress > 40  && intProgress < 51) {
+			txtMessage.sprite.SetOpacity(1.0 - ((intProgress % 40) / 10));
+		}
+		previousIntProgress = intProgress;
+	}
+}
+
+fun showMessage(msg) {
+	if (msg == "boot") {
+		txtMessage.image = Image("txtStartingSystemServices.png");
+	}
+	else if (msg == "shutdown") {
+		txtMessage.image = Image("txtStoppingAllServices.png");
+	}
+	else {
+		txtMessage.image = Image.Text(msg, 1, 1, 1);
+	}
+	txtMessage.x = Window.GetWidth() / 2 - 111;
+	txtMessage.y = Window.GetHeight() - 58;
+	txtMessage.sprite.SetPosition(txtMessage.x, txtMessage.y, 2);
+	txtMessage.sprite.SetImage(txtMessage.image);
+}
+
+
+showBackground();
+
+Plymouth.SetMessageFunction(showMessage);
+
+if (Plymouth.GetMode() == "boot") {
+	Plymouth.SetBootProgressFunction(updateBootAnimation);
+	setupAnimation("boot");
+	showMessage("boot");
+}
+else {
+	Plymouth.SetBootProgressFunction(updateShutdownAnimation);
+	setupAnimation("shutdown");
+	showMessage("shutdown");
+}
+
