@@ -89,7 +89,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 # Locale... I'm from vienna, austria :)
 echo "envy" > /mnt//etc/hostname
 echo LANG=de_AT.UTF-8 > /etc/locale.conf
-myLocale="de_AT.UTF-8 UTF8"; sed -i "/^#$myLocale/ c$myLocale" /mnt/etc/locale.gen
+myLocale="de_AT.UTF-8 UTF-8"; sed -i "/^#$myLocale/ c$myLocale" /mnt/etc/locale.gen
 myLocale="de_AT ISO-8859-1"; sed -i "/^#$myLocale/ c$myLocale" /mnt/etc/locale.gen
 myLocale="de_AT@euro ISO-8859-15"; sed -i "/^#$myLocale/ c$myLocale" /mnt/etc/locale.gen
 # Keyboard
