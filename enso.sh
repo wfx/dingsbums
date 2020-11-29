@@ -75,7 +75,6 @@ mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@snapshots "${D
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvolid=5 "${D0[root]}" /mnt/btrfs
 
 # //// Mount EFI partition ////
-mkdir /mnt/boot
 mount "${D0[efi]}" /mnt/boot
 
 # //// Base system ////
