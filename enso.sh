@@ -80,7 +80,7 @@ mount "${D0[root]}" /mnt/boot
 
 # //// Base system ////
 # Install Arch Linux with (adjust this list to your needs)
-pacstrap /mnt linux base base-devel btrfs-progs intel-ucode nvim
+pacstrap /mnt linux base base-devel btrfs-progs intel-ucode neovim
 
 # //// Generate /etc/fstab ////
 genfstab -U /mnt >> /mnt/etc/fstab
