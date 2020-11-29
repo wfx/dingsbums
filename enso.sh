@@ -67,10 +67,10 @@ umount /mnt
 
 # //// Mount the subvolumes ////
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@ "${D0[root]}" /mnt
+mkdir -p /mnt/{boot,home,var/cache/pacman/pkg,.snapshots,btrfs}
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@home "${D0[root]}" /mnt/home
 #mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvolid=5 "${D1[home]}" /mnt/home
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@pkg "${D0[root]}" /mnt/var/cache/pacman/pkg
-mkdir -p /mnt/{boot,home,var/cache/pacman/pkg,.snapshots,btrfs}
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@snapshots "${D0[root]}" /mnt/.snapshots
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvolid=5 "${D0[root]}" /mnt/btrfs
 
