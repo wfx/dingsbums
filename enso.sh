@@ -24,9 +24,9 @@
 
 
 # //// DEBUG ////
-# set -o errexit  # script exit when a command fails ( add "... || true" to allow fail)
+set -o errexit  # script exit when a command fails ( add "... || true" to allow fail)
 # set -o nounset  # script exit when it use undeclared variables
-# set -o xtrace   # trace for debugging
+set -o xtrace   # trace for debugging
 # set -o pipefail # exit status of last command that throws a non-zero exit code
 
 # //// CONFIGURE ////
@@ -52,9 +52,9 @@ sgdisk -n 0:0:0 -t 0:8300 -c 0:ROOT "${D0[n]}"
 
 # //// File system creation ////
 mkfs.vfat -F32 -n "EFI" "${D0[efi]}" 
-mkds.swap -L "SWAP" "${D0[swap]}"
-mkfs.btrfs -L "ROOT" "${D0[root]}"
-# mkfs.btrfs -L "HOME" "${D1[home]}"
+mkswap -L "SWAP" "${D0[swap]}"
+mkfs.btrfs -f -L "ROOT" "${D0[root]}"
+# mkfs.btrfs -f -L "HOME" "${D1[home]}"
 
 # //// Create and mount subvolumes ////
 mount "${D0[root]}" /mnt
@@ -76,7 +76,7 @@ mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvolid=5 "${D0[root]
 
 # //// Mount EFI partition ////
 mkdir /mnt/boot
-mount "${D0[root]}" /boot
+mount "${D0[root]}" /mnt/boot
 
 # //// Base system ////
 # Install Arch Linux with (adjust this list to your needs)
