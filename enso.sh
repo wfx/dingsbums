@@ -94,8 +94,10 @@ myLocale="de_AT@euro ISO-8859-15"; sed -i "/^#$myLocale/ c$myLocale" /mnt/etc/lo
 # Keyboard
 echo KEYMAP=de-latin1 > /mnt/etc/vconsole.conf
 echo FONT=lat9w-16 >> /mnt/etc/vconsole.conf
+
+# Fidle out how to do the rest...
 # Time zone
-ln -sf /mnt/usr/share/zoneinfo/Europe/Vienna /mnt/etc/localtime
+# ln -sf /mnt/usr/share/zoneinfo/Europe/Vienna /mnt/etc/localtime
 echo "Rest....?"
 arch-chroot /mnt/
 
