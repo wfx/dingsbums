@@ -76,7 +76,7 @@ mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvolid=5 "${D0[root]
 
 # //// Mount EFI partition ////
 mkdir /mnt/boot
-mount "${D0[root]}" /mnt/boot
+mount "${D0[efi]}" /mnt/boot
 
 # //// Base system ////
 # Install Arch Linux with (adjust this list to your needs)
